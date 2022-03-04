@@ -1,0 +1,23 @@
+package Pack2;
+
+import java.util.ArrayList;
+
+import Pack1.T1c;
+
+public class T2c{
+	public static void main (String[] args) {
+		int [] arri = vecm(1000);
+		for(int i=0;i<2;i++) {
+			Thread tid2 = new T1c(i,arri);
+			tid2.start();
+		}
+	}
+	public static int[] vecm(int quant) {
+		ArrayList <Integer> arr = new ArrayList<>();
+		for(int c=0;c<quant;c++) {
+			arr.add((int)((Math.random()*99)+1));
+		}
+		int [] conv = arr.stream().mapToInt(i -> i).toArray();
+		return conv;
+	}
+}

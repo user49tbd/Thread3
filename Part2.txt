@@ -1,0 +1,38 @@
+package Pack1;
+
+public class T1c extends Thread{
+	private int i;
+	private int[] v;
+	public T1c(int i,int [] v) {
+		this.i=i;
+		this.v=v;
+	}
+	@Override
+	public void run() {
+		ThreadVetor(i,v);
+		super.run();
+	}
+	private static void ThreadVetor(int v1,int[] v2) {
+		int res = v1%2;
+		if(res==0) {
+			int leng = v2.length;
+			long sta = System.nanoTime();
+			for(int c=0;c<leng;c++) {
+				
+			}
+			long end = System.nanoTime();
+			long tot = end-sta;
+			double s = (double)tot/1000000000;
+			System.out.println(s+" for ");
+		}else {
+			long sta = System.nanoTime();
+			for(int c:v2) {
+				
+			}
+			long end = System.nanoTime();
+			long tot = end-sta;
+			double s = (double)tot/1000000000;
+			System.out.println(s+" foreach ");
+		}
+	}
+}
